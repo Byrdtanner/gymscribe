@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gym Scribe Privacy Policy</title>
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<main>
+<div class="page">
+  <header class="brand">
+    <a href="./"><img src="icon.png" alt="Gym Scribe support"></a>
+    <div>
+      <h1>Privacy Policy</h1>
+      <p class="tagline">Gym Scribe</p>
+    </div>
+  </header>
+  <p class="updated" id="updated"></p>
+  <div id="policy"></div>
+  <noscript><p>This page needs JavaScript to show the policy. The short version: everything you log stays on your iPhone, and we collect nothing. Questions: support.byrdworks@gmail.com</p></noscript>
+  <nav class="foot">
+    <a href="./">Support</a>
+    <span>Gym Scribe is made by Byrdworks</span>
+  </nav>
+</div>
+</main>
+<script src="policy.js"></script>
+<script>
+  (function () {
+    var policy = window.GT.policy;
+    document.getElementById('updated').textContent = 'Last updated ' + policy.updated + ' · ' + policy.publisher;
+    var host = document.getElementById('policy');
+    policy.sections.forEach(function (section) {
+      var h = document.createElement('h2');
+      h.textContent = section.title;
+      host.appendChild(h);
+      section.paragraphs.forEach(function (text) {
+        var p = document.createElement('p');
+        p.textContent = text;
+        host.appendChild(p);
+      });
+    });
+  })();
+</script>
+</body>
+</html>
