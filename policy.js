@@ -16,7 +16,7 @@ window.GT = window.GT || {};
   'use strict';
 
   GT.policy = {
-    updated: '13 September 2026',
+    updated: '16 September 2026',
     publisher: 'Byrdworks',
     email: 'support.byrdworks@gmail.com',
     sections: [
