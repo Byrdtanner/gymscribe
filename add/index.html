@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Something shared from Gym Scribe, the free iPhone workout log.">
+<meta name="robots" content="noindex">
+<title>Shared from Gym Scribe</title>
+<link rel="icon" href="../icon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="stylesheet" href="../site.css">
+</head>
+<body>
+<main>
+<div class="page">
+  <header class="brand">
+    <img src="../icon.png" alt="">
+    <div>
+      <h1 id="what">Shared from Gym Scribe</h1>
+      <p class="tagline" id="kind">Workout Log &amp; Planner, for iPhone</p>
+    </div>
+  </header>
+
+  <p class="get">
+    <a class="store" id="open" href="#">Open in Gym Scribe</a>
+  </p>
+  <p>
+    Don’t have it yet? <a href="https://apps.apple.com/us/app/gym-scribe-fitness-tracker/id6813229860">Get Gym Scribe on the App Store</a>,
+    free, then come back and tap this link again.
+  </p>
+  <p class="small">
+    What was shared is inside the link itself, after the “#”. Browsers never send that part to any
+    website, so it reached your phone without passing through this site or anyone else.
+  </p>
+</div>
+</main>
+<script>
+(function () {
+  var hash = location.hash || '';
+  var app = 'gymtracker://add' + hash;
+  document.getElementById('open').href = app;
+  /* Say what it is, from the link itself: a name and nothing more. */
+  try {
+    var b = hash.slice(1).replace(/-/g, '+').replace(/_/g, '/');
+    while (b.length % 4) b += '=';
+    var data = JSON.parse(decodeURIComponent(escape(atob(b))));
+    if (data && data.t === 'x' && typeof data.n === 'string') {
+      document.getElementById('what').textContent = data.n.slice(0, 60);
+      document.getElementById('kind').textContent = 'An exercise shared from Gym Scribe';
+    } else if (data && data.t === 'r' && Array.isArray(data.d)) {
+      document.getElementById('what').textContent = typeof data.n === 'string' && data.n ? data.n.slice(0, 60) : 'A workout routine';
+      document.getElementById('kind').textContent = data.d.length + ' workouts shared from Gym Scribe';
+    }
+  } catch (err) { /* not a link this page can read; the buttons still work */ }
+  if (hash.length > 1) setTimeout(function () { location.href = app; }, 300);
+})();
+</script>
+</body>
+</html>
