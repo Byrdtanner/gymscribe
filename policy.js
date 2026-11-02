@@ -16,7 +16,7 @@ window.GT = window.GT || {};
   'use strict';
 
   GT.policy = {
-    updated: '16 September 2026',
+    updated: '2 November 2026',
     publisher: 'Byrdworks',
     email: 'support.byrdworks@gmail.com',
     sections: [
@@ -63,6 +63,34 @@ window.GT = window.GT || {};
           'What is saved to Health is kept by Apple under your Apple account, like the rest of your Health ' +
           'data, and you can delete it in the Health app at any time. Deleting a workout in Gym Scribe ' +
           'deletes its copy in Health too.'
+        ]
+      },
+      {
+        title: 'Your month and your cycle',
+        paragraphs: [
+          'The summary of last month that History shows for the first week of a new one, and the review ' +
+          'of a cycle when you finish it, are worked out by the app from your workouts on your iPhone. ' +
+          'Where your iPhone has Apple Intelligence switched on, Apple’s language model on the device turns ' +
+          'those facts into a few sentences; it runs on your iPhone, and nothing is sent to Apple or to us. ' +
+          'You can turn the month’s summary off in Settings › Preferences.'
+        ]
+      },
+      {
+        title: 'Importing from a picture',
+        paragraphs: [
+          'When you import a workout from a screenshot or a photo, your iPhone reads the text in it itself, ' +
+          'with Apple’s text recognition on the device. The picture is not uploaded or kept: only the exercise ' +
+          'names and numbers you choose to add are saved, like anything else you enter. The camera is used only ' +
+          'if you choose to take a photo for this.'
+        ]
+      },
+      {
+        title: 'Sharing',
+        paragraphs: [
+          'Sharing an exercise or a routine makes a link with it written inside the link itself, after the “#”, ' +
+          'or a picture of it. Nothing is sent to us: you choose where the link or picture goes, and it is then ' +
+          'up to whoever receives it. The link opens a page on our support site that hands it to Gym Scribe; ' +
+          'browsers never send the part after the “#” to a website, so that page never receives it either.'
         ]
       },
       {
